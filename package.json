@@ -1,0 +1,24 @@
+{
+  "name": "PubSub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "docker-compose up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazyhero/PubSub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dazyhero/PubSub/issues"
+  },
+  "homepage": "https://github.com/dazyhero/PubSub#readme",
+  "dependencies": {
+    "ioredis": "^4.17.1"
+  }
+}

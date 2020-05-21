@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  producer:
+    build: './Producer'
+    environment:
+      - PORT=3000
+      - REDIS_HOST=redis
+    volumes:
+      - ./Producer:/opt/app/Producer
+    depends_on:
+      - redis
+    ports:
+      - 3000:3000
+
+  consumer:
+    build: './Consumer'
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - ./Consumer:/opt/app/Consumer
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    ports:
+      - '6379:6379'

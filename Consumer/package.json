@@ -1,0 +1,16 @@
+{
+  "name": "Consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/consumer.js",
+  "scripts": {
+    "start": "node src/consumer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^4.17.1"
+  }
+}
