@@ -7,7 +7,7 @@ And redis as a message broker
 
 ## Producer
 Has one endpoint
-  ** api/v1/track?account_id=<ObjectID>&url=<URL> **
+  **api/v1/track?account_id=\<ObjectID>&url=\<URL>**
 When valid data is received producer sends message to consumer service
 
 ``` curl "localhost:3000/api/v1/track?account_id=5ec2b7b810a0565d0d737844&url=https://google.com" ```
