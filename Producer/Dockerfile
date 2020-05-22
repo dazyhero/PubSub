@@ -1,9 +1,11 @@
 FROM node:latest
 
-COPY . /opt/app
+WORKDIR /opt/app
 
-WORKDIR /opt/app/Producer
+COPY package*.json ./
 
-RUN npm i
+RUN npm install --quiet
 
-CMD npm run start:dev
+COPY . .
+
+CMD npm run start

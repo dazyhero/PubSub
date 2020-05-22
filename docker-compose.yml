@@ -8,6 +8,7 @@ services:
       - docker.env
     volumes:
       - ./Producer:/opt/app/Producer
+      - /opt/app/node_modules
     depends_on:
       - redis
     ports:
@@ -20,6 +21,7 @@ services:
       - docker.env
     volumes:
       - ./Consumer:/opt/app/Consumer
+      - /opt/app/node_modules
     depends_on:
       - redis
 
