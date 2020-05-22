@@ -3,9 +3,9 @@ version: '3'
 services:
   producer:
     build: './Producer'
-    environment:
-      - PORT=3000
-      - REDIS_HOST=redis
+    restart: unless-stopped
+    env_file:
+      - docker.env
     volumes:
       - ./Producer:/opt/app/Producer
     depends_on:
@@ -15,8 +15,9 @@ services:
 
   consumer:
     build: './Consumer'
-    environment:
-      - REDIS_HOST=redis
+    restart: unless-stopped
+    env_file:
+      - docker.env
     volumes:
       - ./Consumer:/opt/app/Consumer
     depends_on:

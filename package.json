@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "docker-compose build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "docker-compose up -d"
+    "start": "docker-compose up"
   },
   "repository": {
     "type": "git",

@@ -1,20 +1,14 @@
-const Redis = require('ioredis');
-const { REDIS_HOST, REDIS_PORT } = require('./config/redis');
+const { Redis } = require('./redis');
+const { redisConfig } = require('./config/redis');
+const { REDIS_CHANNEL = 'mq' } = process.env;
 
-const redisConfig = {
-  host: REDIS_HOST,
-  port: REDIS_PORT,
+const redis = new Redis(redisConfig, REDIS_CHANNEL);
+
+const main = async () => {
+  setTimeout(
+    async () => await redis.init(),
+    process.env.NODE_ENV === 'development' ? 5000 : 0
+  );
 };
 
-const redis = new Redis(redisConfig);
-const sub = new Redis(redisConfig);
-
-redis.subscribe('messaging', (err) => {
-  if (err) console.log(err);
-
-  console.log('Connected');
-});
-
-sub.on('message', (channel, message) => {
-  console.log(`Received message ${message} from ${channel}`);
-});
+main().catch((e) => console.log(e));

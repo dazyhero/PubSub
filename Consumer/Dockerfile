@@ -6,4 +6,4 @@ WORKDIR /opt/app/Consumer
 
 RUN npm i
 
-CMD npm start
+CMD npm run start:dev

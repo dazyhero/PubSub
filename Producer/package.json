@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/producer.js",
   "scripts": {
+    "start:dev": "nodemon src/producer.js",
     "start": "node src/producer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ioredis": "^4.17.1"
+    "rsmq": "^0.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
